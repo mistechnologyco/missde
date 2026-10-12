@@ -205,7 +205,11 @@ const CONFIG={
 };
 /* video: Vimeo/YouTube embed adresi veya .mp4 yolu. Boşsa poster görünür. */
 const PROJECTS=[
-{id:"gece",t:"Gece Sürüşü",c:"Konsept · Otomotiv",k:"Commercial Film",s:["Reklam Filmleri","Post Prodüksiyon"],d:"Gece şehrinin ışığı ve yolun ritmi üzerine kurulu 10 saniyelik konsept reklam filmi. Kurgusal bir otomotiv markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:"big"},
+{id:"proje-1",t:"Proje 1",c:"Missde Yapım",k:"Commercial Film",s:["Reklam Filmleri","Video Prodüksiyon"],d:"Missde Yapım prodüksiyonu ile hazırlanan reklam filmi.",v:"1 (1).mp4",vr:1},
+{id:"proje-3",t:"Proje 3",c:"Missde Yapım",k:"Creative Production",s:["Video Prodüksiyon","Post Prodüksiyon"],d:"Missde Yapım prodüksiyonu ile hazırlanan yaratıcı prodüksiyon filmi.",v:"1 (3).mp4",vr:1},
+{id:"proje-2",t:"Proje 2",c:"Missde Yapım",k:"Brand Film",s:["Marka Filmleri","Video Prodüksiyon"],d:"Missde Yapım prodüksiyonu ile hazırlanan marka filmi.",v:"1 (2).mp4",vr:1},
+{id:"proje-4",t:"Proje 4",c:"Missde Yapım",k:"Corporate Film",s:["Kurumsal Tanıtım Filmleri","Post Prodüksiyon"],d:"Missde Yapım prodüksiyonu ile hazırlanan kurumsal tanıtım filmi.",v:"1 (4).mp4",vr:1},
+{id:"gece",t:"Gece Sürüşü",c:"Konsept · Otomotiv",k:"Commercial Film",s:["Reklam Filmleri","Post Prodüksiyon"],d:"Gece şehrinin ışığı ve yolun ritmi üzerine kurulu 10 saniyelik konsept reklam filmi. Kurgusal bir otomotiv markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:""},
 {id:"ilk-yudum",t:"İlk Yudum",c:"Konsept · Kahve",k:"Brand Film",s:["Marka Filmleri","Video Prodüksiyon"],d:"Sabah ritüelini yavaş ve sakin bir anlatımla işleyen konsept marka filmi. Kurgusal bir kahve markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:"sm"},
 {id:"zaman",t:"Zamanın Ağırlığı",c:"Konsept · Saat",k:"Creative Production",s:["Video Prodüksiyon","Post Prodüksiyon"],d:"Zaman ve an kavramı üzerine tipografi ve ritim odaklı yaratıcı prodüksiyon denemesi. Kurgusal bir saat markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:"sm"},
 {id:"sabah",t:"Sabah 6:00",c:"Konsept · Spor",k:"Social Content",s:["Sosyal Medya İçerikleri"],d:"Hız hissi veren kısa, güçlü bir sosyal medya reklamı konsepti. Kurgusal bir spor markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:""},
@@ -229,12 +233,12 @@ const SERVICES=[["Reklam Filmleri","Markaların hikâyesini etkileyici, yaratıc
 const STEPS=[["Keşif","Markayı, hedefi, izleyiciyi ve projeyi anlamak."],["Yaratıcı geliştirme","Konsept, senaryo, görsel referanslar ve çekim planını hazırlamak."],["Prodüksiyon","Çekim, görüntü yönetimi, ışık, ekip koordinasyonu ve uygulama."],["Post prodüksiyon","Kurgu, renk, ses, grafik ve final teslim."]];
 const $=s=>document.querySelector(s),app=$("#app"),n2=i=>String(i+1).padStart(2,"0");
 const LOGO=document.querySelector(".logo img").src;
-const cardH=(p,wide)=>`<a class="card ${p.r?"rl":wide===true?"wide":""} rv" href="#/proje/${p.id}"><div class="ph"><canvas width="${p.r?540:960}" height="${p.r?960:540}" data-f="${p.id}" role="img" aria-label="${p.t} — konsept ${p.r?"reels":"film"} posteri"></canvas><b>${p.r?"KONSEPT REELS":"KONSEPT FİLM"}</b></div><h3>${p.t}</h3><div class="meta tag"><span>${p.c}${p.r?"":" · "+p.k}</span><span>İncele ↗</span></div></a>`;
+const cardH=(p,wide)=>{const isVert=p.r||p.vr;const badge=p.v?"FİLM":p.r?"KONSEPT REELS":"KONSEPT FİLM";const inner=p.v?`<video src="${p.v}" muted playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>`:`<canvas width="${p.r?540:960}" height="${p.r?960:540}" data-f="${p.id}" role="img" aria-label="${p.t} — konsept ${p.r?"reels":"film"} posteri"></canvas>`;return `<a class="card ${isVert?"rl":wide===true?"wide":""} rv" href="#/proje/${p.id}"><div class="ph">${inner}<b>${badge}</b></div><h3>${p.t}</h3><div class="meta tag"><span>${p.c}${isVert?"":" · "+p.k}</span><span>İncele ↗</span></div></a>`};
 const cta=()=>`<section class="sec wrap big-cta rv"><h2>Bir sonraki hikâyenizi birlikte üretelim.</h2><p>Yeni bir fikir, marka filmi veya reklam projesi mi planlıyorsunuz?</p><a class="btn f" href="#/iletisim">Projenizi konuşalım ↗</a></section>`;
 function home(){
 const hv=CONFIG.heroVideo?`<video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="${CONFIG.heroVideoMobile&&innerWidth<700?CONFIG.heroVideoMobile:CONFIG.heroVideo}"></video>`:"";
 return `<section class="hero"><div class="bg"><div class="beam"></div></div>${hv}<div class="wrap"><h1 class="rv">Hikâyeleri<br>görüntüye<br>dönüştürüyoruz.</h1><p class="rv">Markalar için yaratıcı fikirleri, güçlü görsel anlatımlara dönüştürüyoruz.</p><div class="btns rv"><a class="btn f" href="#/projeler">Projeleri keşfet</a><a class="btn" href="#/iletisim">Bizimle iletişime geç</a></div></div><span class="tag scroll">Scroll to explore</span></section>
-<section class="sec wrap" id="isler"><div class="head"><h2 class="rv">Seçilmiş işler</h2><p class="rv">Her projenin kendine ait bir hikâyesi var.</p></div><div class="grid">${PF.slice(0,3).map((p,i)=>cardH(p,i===0)).join("")}</div></section>
+<section class="sec wrap" id="isler"><div class="head"><h2 class="rv">Seçilmiş işler</h2><p class="rv">Her projenin kendine ait bir hikâyesi var.</p></div><div class="grid">${PF.slice(0,4).map((p,i)=>cardH(p,i===0)).join("")}</div></section>
 <section class="sec wrap" id="reels"><div class="head"><h2 class="rv">Reels</h2><p class="rv">Dikey, hızlı kurgulu reklam konseptleri.</p></div><div class="grid">${PR.map(p=>cardH(p)).join("")}</div><p style="margin-top:40px"><a class="btn" href="#/projeler">Tüm projeler ↗</a></p></section>
 <section class="sec wrap" id="hizmetler"><div class="head"><h2 class="rv">Fikirden son kareye.</h2></div>${SERVICES.map((s,i)=>`<div class="svc rv"><span class="tag">${n2(i)}</span><h3>${s[0]}</h3><p>${s[1]}</p><span>→</span></div>`).join("")}</section>
 <section class="sec wrap" id="surec"><h2 class="rv">Bir fikirle başlar.</h2><div class="steps">${STEPS.map((s,i)=>`<div class="rv"><span class="tag">${n2(i)}</span><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div></section>
@@ -299,9 +303,27 @@ const P={D,fr,seek(v){t=v;fr();P.ont&&P.ont(t,D)},play(){cancelAnimationFrame(ra
 LIVE.add(P);return P}
 LI.onload=()=>document.querySelectorAll("canvas").forEach(c=>c._p&&c._p.fr());
 document.fonts&&document.fonts.ready.then(()=>document.querySelectorAll("canvas").forEach(c=>c._p&&c._p.fr()));
+let _vsTimer=null;
+function stopVideoSeq(){if(_vsTimer){clearTimeout(_vsTimer);_vsTimer=null;}}
+function initVideoSeq(root){
+  stopVideoSeq();
+  const vids=[...root.querySelectorAll(".card video")];
+  if(!vids.length)return;
+  let idx=0;
+  function playNext(){
+    vids.forEach(v=>{v.pause();v.currentTime=0;});
+    const v=vids[idx];
+    v.currentTime=0;
+    v.play().catch(()=>{});
+    idx=(idx+1)%vids.length;
+    _vsTimer=setTimeout(playNext,2000);
+  }
+  playNext();
+}
 function initCards(root){const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 root.querySelectorAll("canvas[data-f]").forEach(c=>{const sp=FILMS[c.dataset.f],P=Player(c,sp),cd=c.closest(".card");c._p=P;P.seek(sp.po);if(rm)return;
-cd.onmouseenter=()=>{P.seek(0);P.play()};cd.onmouseleave=()=>{P.pause();P.seek(sp.po)};P.onend=()=>{P.seek(0);P.play()}})}
+cd.onmouseenter=()=>{P.seek(0);P.play()};cd.onmouseleave=()=>{P.pause();P.seek(sp.po)};P.onend=()=>{P.seek(0);P.play()}});
+initVideoSeq(root);}
 function wireDetail(id){const c=$("#fp");if(!c)return;const sp=FILMS[id],P=Player(c,sp),b=$("#pp"),r=$("#pr"),tm=$("#pt"),fm=q=>Math.floor(q/60)+":"+String(Math.floor(q%60)).padStart(2,"0");
 c._p=P;P.ont=(t,D)=>{r.value=t/D*1000;tm.textContent=fm(t)+" / "+fm(D)};P.onend=()=>{b.textContent="Tekrar izle"};P.seek(sp.po);P.seek(0);P.fr();
 b.onclick=()=>{if(P.run){P.pause();b.textContent="Devam"}else{P.play();b.textContent="Duraklat"}};
@@ -316,7 +338,7 @@ const setNav=(open)=>{
   document.body.style.overflow=open?"hidden":"";
 };
 function route(){
-LIVE.forEach(p=>p.pause());LIVE.clear();
+LIVE.forEach(p=>p.pause());LIVE.clear();stopVideoSeq();
 const [,r,id]=(location.hash||"#/").split("/");
 let h,sc=null;
 if(!r||["hizmetler","hakkimizda"].includes(r)){h=home();sc=r}
