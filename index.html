@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Missde Yapım — Reklam ve Marka Filmleri</title>
+<meta name="description" content="Missde Yapım; reklam filmleri, marka filmleri, yaratıcı video prodüksiyonu ve sinematik hikâye anlatımı.">
+<meta property="og:title" content="Missde Yapım">
+<meta property="og:description" content="Hikâyeleri görüntüye dönüştürüyoruz.">
+<meta name="color-scheme" content="dark">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@800&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090909;--bg2:#111;--surf:#1a1a1a;--fg:#f5f3ef;--mut:#b8b1a6;--line:#292929;--px:max(clamp(20px,4vw,56px),calc((100vw - 1560px)/2));box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}
+html{height:100%;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0)}
+*{box-sizing:border-box;margin:0}
+body{min-height:100%;background:var(--bg);color:var(--fg);font:400 16px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.tag{font:500 12px 'Space Grotesk',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+h1,h2,h3{font-weight:800;line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+h1{font-size:clamp(38px,7.2vw,116px)}
+h2{font-size:clamp(28px,4.6vw,68px)}
+.wrap{padding:0 var(--px)}
+.sec{padding-block:clamp(64px,9vw,128px);border-top:1px solid var(--line)}
+header{position:fixed;top:env(safe-area-inset-top,0);left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px var(--px);transition:background .4s}
+header.solid{background:rgba(9,9,9,.92);border-bottom:1px solid var(--line)}
+.logo img{height:34px;display:block}
+nav{display:flex;gap:28px;align-items:center}
+nav a{font:500 12px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--mut);transition:color .3s}
+nav a:hover,nav a.on{color:var(--fg)}
+nav a.cta{color:var(--fg);border-bottom:1px solid var(--fg);padding-bottom:3px}
+#bt{display:none;background:none;border:1px solid var(--line);color:var(--fg);padding:8px 14px;font:500 12px 'Space Grotesk';letter-spacing:.14em}
+@media(max-width:860px){#bt{display:block}nav{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;gap:26px;display:none}nav.open{display:flex}nav a{font-size:20px;color:var(--fg)}header{z-index:60}}
+.hero{position:relative;min-height:min(100svh,1000px);display:flex;flex-direction:column;justify-content:flex-end;padding:140px 0 56px;overflow:hidden;background:#0c0c0c}
+.hero .bg,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.beam{position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 38%,rgba(184,177,166,.2) 50%,transparent 62%),radial-gradient(60% 50% at 75% 30%,#232120,transparent);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(6%,-3%) scale(1.06)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#090909 5%,rgba(9,9,9,.35) 60%,rgba(9,9,9,.55))}
+.hero .wrap{position:relative;z-index:2}
+.hero p{max-width:460px;margin:28px 0 32px;color:var(--mut);font-size:18px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;font:500 12px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;padding:16px 26px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;transition:.3s}
+.btn.f,.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.f:hover{background:none;color:var(--fg)}
+.scroll{position:absolute;right:var(--px);bottom:56px;z-index:2;writing-mode:vertical-rl}
+@media(max-width:700px){.scroll{display:none}}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:56px}
+.head p{color:var(--mut);max-width:320px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,28px)}
+.card{grid-column:span 6;display:block}
+.card.wide{grid-column:span 12}.card.wide .ph{aspect-ratio:21/9}.rl{grid-column:span 3}.rl .ph{aspect-ratio:9/16}.rl h3{font-size:17px}.rl .meta span:last-child{display:none}.vid canvas{position:absolute;inset:0;width:100%;height:100%}.vid.vr{aspect-ratio:9/16;max-width:420px;margin-inline:0}.vid.vr+.pl,.vid.vr+.pl+p{max-width:420px}#rs[hidden]{display:none}
+@media(max-width:800px){.card,.card.wide{grid-column:span 12}.card.wide .ph{aspect-ratio:16/10}.card.rl{grid-column:span 6}}
+.ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surf)}
+.ph canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph i{position:absolute;inset:0;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph i{transform:scale(1.05)}
+.ph b{position:absolute;left:14px;top:14px;font:500 10px 'Space Grotesk';letter-spacing:.14em;border:1px solid var(--mut);color:var(--mut);padding:3px 8px;background:rgba(9,9,9,.6)}
+.card h3{font-size:22px;margin:18px 0 6px}
+.meta{display:flex;justify-content:space-between;gap:12px}
+.svc{display:grid;grid-template-columns:70px 1fr 1.2fr 30px;gap:24px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line);transition:padding .4s}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc:hover{padding-left:14px}
+.svc h3{font-size:clamp(22px,3vw,40px)}
+.svc p{color:var(--mut)}
+@media(max-width:800px){.svc{grid-template-columns:44px 1fr;gap:8px 14px}.svc p{grid-column:2}.svc span:last-child{display:none}}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px}
+.steps div{padding:24px 24px 0 0;border-top:1px solid var(--fg)}
+.steps h3{font-size:22px;margin:14px 0 10px}.steps p{color:var(--mut);font-size:15px}
+@media(max-width:800px){.steps{grid-template-columns:1fr;gap:34px}}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end}
+.about p{color:var(--mut);font-size:18px;max-width:520px}
+.slot{aspect-ratio:4/5;border:1px dashed #3a3a3a;display:grid;place-items:center;text-align:center;padding:20px;background:var(--bg2)}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+.big-cta{text-align:left}.big-cta h2{font-size:clamp(32px,6vw,92px);margin-bottom:28px}
+.big-cta p{color:var(--mut);margin-bottom:32px}
+footer.wrap{border-top:1px solid var(--line);padding-block:88px 44px}.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}.fb p{color:var(--mut);margin:0 0 24px;max-width:320px}@media(max-width:800px){.fg{grid-template-columns:1fr 1fr}.fb{grid-column:1/-1}}
+footer img{height:30px;margin-bottom:14px}
+footer ul{list-style:none;padding:0;display:grid;gap:10px;color:var(--mut)}footer h4{margin-bottom:18px;font-weight:500}footer li a:hover{color:var(--fg)}
+.fl{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:#6f6a62;font-size:13px}.fl a:hover{color:var(--fg)}.pl{display:flex;gap:18px;align-items:center;margin:-20px 0 18px}.pl input{flex:1;accent-color:#f5f3ef;border:0;padding:0}.pl .tag{min-width:84px}.pv p{color:var(--mut);margin:0 0 22px;max-width:680px}.pv h3{font-size:20px;margin:36px 0 12px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.filters button{background:none;border:1px solid var(--line);color:var(--mut);padding:9px 16px;cursor:pointer;font:500 12px 'Space Grotesk';letter-spacing:.1em;text-transform:uppercase}
+.filters button.on,.filters button:hover{border-color:var(--fg);color:var(--fg)}
+.page{padding-top:150px}
+.vid{aspect-ratio:16/9;background:var(--surf);position:relative;overflow:hidden;margin:40px 0}
+.vid iframe,.vid video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.facts{display:grid;grid-template-columns:1fr 2fr;gap:56px}
+.facts dt{margin-top:22px}.facts dd{margin:4px 0 0}
+@media(max-width:800px){.facts{grid-template-columns:1fr;gap:10px}}
+form{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin-top:48px}
+label{display:block}label .tag{display:block;margin-bottom:8px}
+input,select,textarea{width:100%;background:none;border:0;border-bottom:1px solid #3a3a3a;color:var(--fg);padding:10px 0;font:inherit;border-radius:0}
+select option{background:#111}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--fg)}
+.full{grid-column:1/-1}
+@media(max-width:700px){form{grid-template-columns:1fr}}
+#msg{margin-top:22px;max-width:900px;color:var(--mut)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header id="hd"><a class="logo" href="#/" aria-label="Missde Yapım ana sayfa"><img src="data:image/png;base64,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" alt="Missde Yapım"></a>
+<button id="bt" aria-expanded="false" aria-controls="nv">MENÜ</button>
+<nav id="nv"><a href="#/">Ana Sayfa</a><a href="#/projeler">Projeler</a><a href="#/hizmetler">Hizmetler</a><a href="#/hakkimizda">Hakkımızda</a><a href="#/iletisim">İletişim</a><a class="cta" href="#/iletisim">Projeni anlatalım ↗</a></nav></header>
+<main id="app"></main>
+<footer class="wrap" id="ft"></footer>
+<script>
+/* ===== YAPILANDIRMA — buraya kendi bilgilerinizi girin ===== */
+const CONFIG={
+  email:"",            // örn. "merhaba@missdeyapim.com"
+  instagram:"",        // örn. "https://instagram.com/..."
+  vimeo:"",            // Vimeo veya YouTube kanal adresi
+  formEndpoint:"",     // Formspree / Getform vb. POST adresi (varsa e-posta yerine bu kullanılır)
+  heroVideo:"",        // örn. "assets/hero.mp4" (sessiz, döngülü oynar)
+  heroVideoMobile:""   // mobil için hafif alternatif (isteğe bağlı)
+};
+/* video: Vimeo/YouTube embed adresi veya .mp4 yolu. Boşsa poster görünür. */
+const PROJECTS=[
+{id:"gece",t:"Gece Sürüşü",c:"Konsept · Otomotiv",k:"Commercial Film",s:["Reklam Filmleri","Post Prodüksiyon"],d:"Gece şehrinin ışığı ve yolun ritmi üzerine kurulu 10 saniyelik konsept reklam filmi. Kurgusal bir otomotiv markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:"big"},
+{id:"ilk-yudum",t:"İlk Yudum",c:"Konsept · Kahve",k:"Brand Film",s:["Marka Filmleri","Video Prodüksiyon"],d:"Sabah ritüelini yavaş ve sakin bir anlatımla işleyen konsept marka filmi. Kurgusal bir kahve markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:"sm"},
+{id:"zaman",t:"Zamanın Ağırlığı",c:"Konsept · Saat",k:"Creative Production",s:["Video Prodüksiyon","Post Prodüksiyon"],d:"Zaman ve an kavramı üzerine tipografi ve ritim odaklı yaratıcı prodüksiyon denemesi. Kurgusal bir saat markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:"sm"},
+{id:"sabah",t:"Sabah 6:00",c:"Konsept · Spor",k:"Social Content",s:["Sosyal Medya İçerikleri"],d:"Hız hissi veren kısa, güçlü bir sosyal medya reklamı konsepti. Kurgusal bir spor markası için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:""},
+{id:"uretim",t:"Üretimin İçinden",c:"Konsept · Kurumsal",k:"Corporate Film",s:["Kurumsal Tanıtım Filmleri","Post Prodüksiyon"],d:"Bir üretim firmasının emeğini ve detay anlayışını anlatan kurumsal tanıtım konsepti. Kurgusal bir firma için hazırlandı; gerçek bir müşteri işi değildir.",v:"",z:""},
+{id:"reel-aura",t:"Aura",c:"Konsept · Parfüm",k:"Reels",s:["Sosyal Medya İçerikleri","Post Prodüksiyon"],d:"Işık, bokeh ve hızlı kurguyla hazırlanmış 9:16 konsept reklam reels. Kurgusal bir parfüm markası için; gerçek bir müşteri işi değildir.",v:"",r:1},
+{id:"reel-rota",t:"Rota",c:"Konsept · Seyahat",k:"Reels",s:["Sosyal Medya İçerikleri","Post Prodüksiyon"],d:"Ufuk ve yolculuk hissi üzerine 9:16 konsept reklam reels. Kurgusal bir seyahat markası için; gerçek bir müşteri işi değildir.",v:"",r:1},
+{id:"reel-ritim",t:"Ritim",c:"Konsept · Ses",k:"Reels",s:["Sosyal Medya İçerikleri","Post Prodüksiyon"],d:"Ritim ve kesme odaklı 9:16 konsept reklam reels. Kurgusal bir kulaklık markası için; gerçek bir müşteri işi değildir.",v:"",r:1},
+{id:"reel-hiz",t:"Hız",c:"Konsept · Otomotiv",k:"Reels",s:["Sosyal Medya İçerikleri","Post Prodüksiyon"],d:"Hız ve gece atmosferi üzerine 9:16 konsept reklam reels. Kurgusal bir otomotiv markası için; gerçek bir müşteri işi değildir.",v:"",r:1}];
+const PF=PROJECTS.filter(p=>!p.r),PR=PROJECTS.filter(p=>p.r);
+const FILMS={
+gece:{po:1.8,s:[{d:3.2,v:"lines",t:["Şehir uyurken","yol uyanır."]},{d:3,v:"beam",t:["Her viraj","bir karar."]},{d:3.4,v:"end",t:["Gece Sürüşü"]}]},
+"ilk-yudum":{po:1.8,s:[{d:3.2,v:"rings",t:["Güne","yavaş başla."]},{d:3,v:"rings",t:["Bir yudum,","bir ritüel."]},{d:3.4,v:"end",t:["İlk Yudum"]}]},
+zaman:{po:1.8,s:[{d:3.2,v:"ticks",t:["Zaman","akar."]},{d:3,v:"ticks",t:["Anlar","kalır."]},{d:3.4,v:"end",t:["Zamanın Ağırlığı"]}]},
+sabah:{po:1.8,s:[{d:3.2,v:"streak",t:["Herkes uyurken","sen koşarsın."]},{d:3,v:"streak",t:["Bir adım","daha."]},{d:3.4,v:"end",t:["Sabah 6:00"]}]},
+uretim:{po:1.8,s:[{d:3.2,v:"lines",t:["Detayda","büyük iş var."]},{d:3,v:"beam",t:["Ekip. Emek.","Sonuç."]},{d:3.4,v:"end",t:["Üretimin İçinden"]}]},
+"reel-aura":{r:1,po:1.9,s:[{d:1.3,v:"bokeh",t:["Işığı"]},{d:1.3,v:"sweep",t:["Yakala."]},{d:1.4,v:"panels",t:["Bir iz","bırak."]},{d:1.6,v:"rings",t:["Görünmez","ama","kalıcı."]},{d:1.2,v:"bokeh",t:["Her","damla"]},{d:1.4,v:"sweep",t:["Bir","hikâye."]},{d:1.4,v:"rings",t:["Aura"]},{d:2.6,v:"end",t:["Aura"]}]},
+"reel-rota":{r:1,po:1.9,s:[{d:1.4,v:"horizon",t:["Yola","çık."]},{d:1.6,v:"sweep",t:["Ufuk","seni","bekler."]},{d:1.2,v:"bokeh",t:["Kaybol."]},{d:1.4,v:"horizon",t:["Bul","kendini."]},{d:1.6,v:"beam",t:["Her","şehir","bir sahne."]},{d:1.2,v:"panels",t:["Bir","kare"]},{d:1.4,v:"sweep",t:["Rota"]},{d:2.6,v:"end",t:["Rota"]}]},
+"reel-ritim":{r:1,po:1.9,s:[{d:1.3,v:"panels",t:["Sesi","aç."]},{d:1.4,v:"rings",t:["Ritmi","hisset."]},{d:1.4,v:"panels",t:["Dünya","sessiz."]},{d:1.3,v:"sweep",t:["Sadece","sen."]},{d:1.4,v:"rings",t:["Tekrar.","Tekrar."]},{d:1.3,v:"beam",t:["Ritim"]},{d:1.3,v:"bokeh",t:["Dinle."]},{d:2.6,v:"end",t:["Ritim"]}]},
+"reel-hiz":{r:1,po:1.9,s:[{d:1.1,v:"sweep",t:["Hız"]},{d:1.4,v:"horizon",t:["Sınır","yok."]},{d:1.5,v:"beam",t:["Karanlığın","içinden."]},{d:1.0,v:"panels",t:["Geç."]},{d:1.4,v:"horizon",t:["Yol","senin."]},{d:1.2,v:"sweep",t:["Durma."]},{d:1.4,v:"bokeh",t:["Gece","bizim."]},{d:2.6,v:"end",t:["Hız"]}]}};
+const SERVICES=[["Reklam Filmleri","Markaların hikâyesini etkileyici, yaratıcı ve akılda kalıcı reklam filmlerine dönüştürme."],["Marka Filmleri","Markanın kimliğini, vizyonunu ve değerlerini sinematik bir anlatımla aktarma."],["Video Prodüksiyon","Konsept geliştirme, çekim planlaması, profesyonel görüntü yönetimi ve çekim süreçleri."],["Post Prodüksiyon","Kurgu, renk düzenleme, ses tasarımı, motion graphics ve final teslim süreçleri."],["Sosyal Medya İçerikleri","Instagram Reels, dikey video, kısa reklam ve platformlara özel yaratıcı içerikler."],["Kurumsal Tanıtım Filmleri","Şirketler, kurumlar ve işletmeler için profesyonel tanıtım videoları."]];
+const STEPS=[["Keşif","Markayı, hedefi, izleyiciyi ve projeyi anlamak."],["Yaratıcı geliştirme","Konsept, senaryo, görsel referanslar ve çekim planını hazırlamak."],["Prodüksiyon","Çekim, görüntü yönetimi, ışık, ekip koordinasyonu ve uygulama."],["Post prodüksiyon","Kurgu, renk, ses, grafik ve final teslim."]];
+const $=s=>document.querySelector(s),app=$("#app"),n2=i=>String(i+1).padStart(2,"0");
+const LOGO=document.querySelector(".logo img").src;
+const cardH=(p,wide)=>`<a class="card ${p.r?"rl":wide===true?"wide":""} rv" href="#/proje/${p.id}"><div class="ph"><canvas width="${p.r?540:960}" height="${p.r?960:540}" data-f="${p.id}" role="img" aria-label="${p.t} — konsept ${p.r?"reels":"film"} posteri"></canvas><b>${p.r?"KONSEPT REELS":"KONSEPT FİLM"}</b></div><h3>${p.t}</h3><div class="meta tag"><span>${p.c}${p.r?"":" · "+p.k}</span><span>İncele ↗</span></div></a>`;
+const cta=()=>`<section class="sec wrap big-cta rv"><h2>Bir sonraki hikâyenizi birlikte üretelim.</h2><p>Yeni bir fikir, marka filmi veya reklam projesi mi planlıyorsunuz?</p><a class="btn f" href="#/iletisim">Projenizi konuşalım ↗</a></section>`;
+function home(){
+const hv=CONFIG.heroVideo?`<video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="${CONFIG.heroVideoMobile&&innerWidth<700?CONFIG.heroVideoMobile:CONFIG.heroVideo}"></video>`:"";
+return `<section class="hero"><div class="bg"><div class="beam"></div></div>${hv}<div class="wrap"><h1 class="rv">Hikâyeleri<br>görüntüye<br>dönüştürüyoruz.</h1><p class="rv">Markalar için yaratıcı fikirleri, güçlü görsel anlatımlara dönüştürüyoruz.</p><div class="btns rv"><a class="btn f" href="#/projeler">Projeleri keşfet</a><a class="btn" href="#/iletisim">Bizimle iletişime geç</a></div></div><span class="tag scroll">Scroll to explore</span></section>
+<section class="sec wrap" id="isler"><div class="head"><h2 class="rv">Seçilmiş işler</h2><p class="rv">Her projenin kendine ait bir hikâyesi var.</p></div><div class="grid">${PF.slice(0,3).map((p,i)=>cardH(p,i===0)).join("")}</div></section>
+<section class="sec wrap" id="reels"><div class="head"><h2 class="rv">Reels</h2><p class="rv">Dikey, hızlı kurgulu reklam konseptleri.</p></div><div class="grid">${PR.map(p=>cardH(p)).join("")}</div><p style="margin-top:40px"><a class="btn" href="#/projeler">Tüm projeler ↗</a></p></section>
+<section class="sec wrap" id="hizmetler"><div class="head"><h2 class="rv">Fikirden son kareye.</h2></div>${SERVICES.map((s,i)=>`<div class="svc rv"><span class="tag">${n2(i)}</span><h3>${s[0]}</h3><p>${s[1]}</p><span>→</span></div>`).join("")}</section>
+<section class="sec wrap" id="surec"><h2 class="rv">Bir fikirle başlar.</h2><div class="steps">${STEPS.map((s,i)=>`<div class="rv"><span class="tag">${n2(i)}</span><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div></section>
+<section class="sec wrap about" id="hakkimizda"><div><h2 class="rv" style="margin-bottom:32px">Sadece görüntü üretmiyoruz.<br>Hikâye anlatıyoruz.</h2><p class="rv">Missde Yapım olarak yaratıcı fikirleri güçlü görsel anlatımlara dönüştürüyoruz. Her projeye kendi hikâyesi, estetiği ve hedefi üzerinden yaklaşıyor; fikir geliştirmeden son kareye kadar bütünlüklü bir prodüksiyon deneyimi sunuyoruz.</p></div><div class="slot rv"><span class="tag">Set arkası / ekip fotoğrafı<br>buraya eklenecek</span></div></section>${cta()}`}
+function projects(){
+const cats=["Tümü",...new Set(PROJECTS.map(p=>p.k))];
+return `<section class="page wrap"><span class="tag">Portfolyo</span><h1 style="font-size:clamp(40px,8vw,110px);margin:14px 0 48px">Projeler</h1><div class="filters" role="group" aria-label="Kategori filtresi">${cats.map((c,i)=>`<button data-c="${c}" class="${i?"":"on"}">${c}</button>`).join("")}</div><div class="grid" id="pg">${PF.map((p,i)=>cardH(p,i===0)).join("")}</div><div id="rs"><h2 style="font-size:32px;margin:96px 0 28px">Reels</h2><div class="grid" id="rg">${PR.map(p=>cardH(p)).join("")}</div></div></section><div style="height:100px"></div>${cta()}`}
+function detail(id){
+const p=PROJECTS.find(x=>x.id===id);if(!p)return nf();
+const v=p.v?(/\.(mp4|webm)$/.test(p.v)?`<video controls playsinline preload="metadata" src="${p.v}"></video>`:`<iframe src="${p.v}" allowfullscreen loading="lazy" title="${p.t}"></iframe>`):`<canvas id="fp" width="${p.r?540:960}" height="${p.r?960:540}" role="img" aria-label="${p.t} — konsept reklam filmi"></canvas>`;
+const rel=PROJECTS.filter(x=>x.id!==id&&!!x.r===!!p.r).slice(0,p.r?4:2);
+return `<section class="page wrap"><a class="tag" href="#/projeler">← Tüm projeler</a><h1 style="font-size:clamp(36px,7vw,100px);margin:18px 0 8px">${p.t}</h1><span class="tag">${p.c} · ${p.k}</span><div class="vid${p.r?" vr":""}">${v}</div>${p.v?"":`<div class="pl"><button class="btn" id="pp">Oynat</button><input id="pr" type="range" min="0" max="1000" value="0" aria-label="Zaman çizelgesi"><span class="tag" id="pt"></span></div><p class="tag">Konsept film · sessiz, tarayıcıda üretilmiş animasyon · gerçek müşteri işi değildir</p>`}<dl class="facts"><div><dt class="tag">Kullanılan hizmetler</dt><dd>${p.s.join("<br>")}</dd></div><div><dt class="tag">Proje</dt><dd style="color:var(--mut);font-size:18px">${p.d}</dd></div></dl><h2 style="font-size:32px;margin:96px 0 28px">İlgili projeler</h2><div class="grid">${rel.map(cardH).join("")}</div></section><div style="height:100px"></div>${cta()}`}
+function contact(){
+return `<section class="page wrap"><span class="tag">İletişim</span><h1 style="font-size:clamp(40px,8vw,110px);margin-top:14px">Projenizi anlatın.</h1><form id="cf" novalidate><label><span class="tag">Ad soyad</span><input name="ad" required autocomplete="name"></label><label><span class="tag">Şirket / marka</span><input name="marka" autocomplete="organization"></label><label><span class="tag">E-posta</span><input name="eposta" type="email" required autocomplete="email"></label><label><span class="tag">Proje türü</span><select name="tur">${["Reklam Filmi","Marka Filmi","Video Prodüksiyon","Post Prodüksiyon","Sosyal Medya İçeriği","Kurumsal Tanıtım Filmi","Diğer"].map(o=>`<option>${o}</option>`).join("")}</select></label><label class="full"><span class="tag">Tahmini bütçe (isteğe bağlı)</span><input name="butce"></label><label class="full"><span class="tag">Proje açıklaması</span><textarea name="aciklama" rows="5" required></textarea></label><div class="full"><button class="btn f" type="submit">Proje talebi gönder ↗</button></div></form><p id="msg" role="status"></p></section><div style="height:100px"></div>`}
+const nf=()=>`<section class="page wrap" style="min-height:70vh"><span class="tag">404</span><h1 style="margin:14px 0 28px">Bu kare<br>kurgudan çıkmış.</h1><a class="btn" href="#/">Ana sayfaya dön</a></section>`;
+function foot(){
+const L=(u,t)=>u?`<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`:"";
+const pg=[["Ana Sayfa","#/"],["Projeler","#/projeler"],["Hizmetler","#/hizmetler"],["Hakkımızda","#/hakkimizda"],["İletişim","#/iletisim"]];
+return `<div class="fg"><div class="fb"><img src="${LOGO}" alt="Missde Yapım"><p>Fikirden son kareye. Reklam filmleri, marka filmleri ve yaratıcı video prodüksiyonu.</p><a class="btn f" href="#/iletisim">Projenizi konuşalım ↗</a></div><div><h4 class="tag">Sayfalar</h4><ul>${pg.map(p=>`<li><a href="${p[1]}">${p[0]}</a></li>`).join("")}</ul></div><div><h4 class="tag">Hizmetler</h4><ul>${SERVICES.map(s=>`<li><a href="#/hizmetler">${s[0]}</a></li>`).join("")}</ul></div><div><h4 class="tag">İletişim</h4><ul>${L(CONFIG.email&&"mailto:"+CONFIG.email,CONFIG.email)}${L(CONFIG.instagram,"Instagram")}${L(CONFIG.vimeo,"Vimeo / YouTube")}<li><a href="#/iletisim">Proje talep formu</a></li><li><a href="#/projeler">Portfolyo</a></li></ul></div></div><div class="fl"><span>© ${new Date().getFullYear()} Missde Yapım. Tüm hakları saklıdır.</span><a href="#/gizlilik">Gizlilik politikası</a><a href="#" onclick="scrollTo(0,0);return false">Yukarı ↑</a></div>`}
+const LI=new Image();LI.src=LOGO;
+const CR=a=>`rgba(245,243,239,${a})`,LIVE=new Set();
+const VIS={
+lines(x,w,h,l){for(let k=0;k<16;k++){const q=(k/16+l*.12)%1,y=h*.52+q*q*h*.48;x.strokeStyle=CR(.05+q*.35);x.lineWidth=1+q*2;x.beginPath();x.moveTo(0,y);x.lineTo(w,y);x.stroke()}x.fillStyle=CR(.5);x.fillRect(w*.3,h*.52,w*.7,1)},
+beam(x,w,h,l,u){x.translate(w*(-.3+u*1.5),0);x.rotate(.35);const g=x.createLinearGradient(-w*.15,0,w*.15,0);g.addColorStop(0,"rgba(245,243,239,0)");g.addColorStop(.5,CR(.22));g.addColorStop(1,"rgba(245,243,239,0)");x.fillStyle=g;x.fillRect(-w*.15,-h,w*.3,h*3)},
+rings(x,w,h,l){for(let k=0;k<7;k++){const q=(l*.22+k/7)%1;x.strokeStyle=CR((1-q)*.35);x.lineWidth=1.5;x.beginPath();x.arc(w*.75,h*.5,q*h*.95,0,7);x.stroke()}},
+ticks(x,w,h,l){x.translate(w*.74,h*.5);const R=h*.36;for(let k=0;k<60;k++){const a=k/60*6.2832,m=k%5,r2=R-(m?10:22);x.strokeStyle=CR(m?.25:.7);x.lineWidth=m?1:2.5;x.beginPath();x.moveTo(Math.cos(a)*R,Math.sin(a)*R);x.lineTo(Math.cos(a)*r2,Math.sin(a)*r2);x.stroke()}const a=l*.9-1.57;x.strokeStyle=CR(.9);x.lineWidth=2;x.beginPath();x.moveTo(0,0);x.lineTo(Math.cos(a)*R*.8,Math.sin(a)*R*.8);x.stroke()},
+streak(x,w,h,l){for(let k=0;k<22;k++){const s=Math.sin(k*91.7)*.5+.5,y=h*(.1+(k*37%100)/120),px=((k*.137+l*(.25+s*.5))%1.5-.25)*w;x.strokeStyle=CR(.08+s*.3);x.lineWidth=1+s*2;x.beginPath();x.moveTo(px,y);x.lineTo(px+w*(.1+s*.25),y);x.stroke()}},
+end(x,w,h,l){VIS.beam(x,w,h,l,Math.min(1,l/3.4)*.6+.2)}};
+function draw(c,sp,t){const x=c.getContext("2d"),w=c.width,h=c.height;x.fillStyle="#090909";x.fillRect(0,0,w,h);
+let T=0,i=0;while(i<sp.s.length-1&&t>=T+sp.s[i].d){T+=sp.s[i].d;i++}
+const S=sp.s[i],l=t-T,e=S.v==="end",fi=Math.min(1,l/.9),a=Math.max(0,Math.min(fi,e?1:(S.d-l)/.7));
+x.save();VIS[S.v](x,w,h,l,Math.min(1,l/S.d));x.restore();
+x.globalAlpha=a;x.fillStyle="#f5f3ef";
+if(e){const lw=w*.42,lh=lw*LI.height/(LI.width||1);if(LI.width)x.drawImage(LI,(w-lw)/2,h*.4-lh/2+(1-fi)*14,lw,lh);x.textAlign="center";x.font=`500 ${w*.016}px 'Space Grotesk',sans-serif`;if("letterSpacing"in x)x.letterSpacing=w*.005+"px";x.fillStyle="#b8b1a6";x.fillText((S.t[0]+" · Konsept film").toUpperCase(),w/2,h*.64)}
+else{const fs=w*.072;x.textAlign="left";x.font=`800 ${fs}px Manrope,sans-serif`;if("letterSpacing"in x)x.letterSpacing="0px";S.t.forEach((q,k)=>x.fillText(q.toUpperCase(),w*.07,h*.46+k*fs*1.08+(1-fi)*24))}
+x.globalAlpha=1;x.fillStyle="#000";x.fillRect(0,0,w,h*.07);x.fillRect(0,h*.93,w,h*.07)}
+const RV={
+bokeh(x,w,h,l){for(let k=0;k<16;k++){const px=((Math.sin(k*12.9)*.5+.5)*1.2-.1)*w+Math.sin(l*.8+k)*18,py=((Math.sin(k*78.2)*.5+.5)*1.2-.1)*h-l*(8+k%5*7),r=w*(.07+k%4*.05),g=x.createRadialGradient(px,py,0,px,py,r);g.addColorStop(0,CR(.1+k%3*.07));g.addColorStop(1,CR(0));x.fillStyle=g;x.fillRect(px-r,py-r,r*2,r*2)}},
+sweep(x,w,h,l){const cx=w*((l*.8)%1.6-.3),y=h*.42;let g=x.createLinearGradient(cx-w*.6,0,cx+w*.6,0);g.addColorStop(0,CR(0));g.addColorStop(.5,CR(.9));g.addColorStop(1,CR(0));x.fillStyle=g;x.fillRect(0,y,w,2.5);g=x.createLinearGradient(cx-w*.8,0,cx+w*.8,0);g.addColorStop(0,CR(0));g.addColorStop(.5,CR(.16));g.addColorStop(1,CR(0));x.fillStyle=g;x.fillRect(0,y-h*.07,w,h*.14)},
+panels(x,w,h,l){const b=w/7;for(let k=0;k<7;k++){x.fillStyle=CR(.03+.13*Math.abs(Math.sin(k*1.7+l*2.2)));x.fillRect(k*b,0,b-2,h)}},
+rings(x,w,h,l){for(let k=0;k<6;k++){const q=(l*.5+k/6)%1;x.strokeStyle=CR((1-q)*.4);x.lineWidth=1.5;x.beginPath();x.arc(w/2,h*.4,q*h*.6,0,7);x.stroke()}},
+horizon(x,w,h,l){const y=h*.42;x.lineWidth=1;for(let k=-8;k<=8;k++){x.strokeStyle=CR(.12);x.beginPath();x.moveTo(w/2+k*w*.45,h);x.lineTo(w/2+k*10,y);x.stroke()}for(let k=0;k<12;k++){const q=(k/12+l*.25)%1,yy=y+q*q*(h-y);x.strokeStyle=CR(.05+q*.3);x.beginPath();x.moveTo(0,yy);x.lineTo(w,yy);x.stroke()}x.fillStyle=CR(.6);x.fillRect(0,y,w,1.5)},
+beam(x,w,h,l){x.translate(w*(-.4+(l*.5)%1.8),0);x.rotate(.3);const g=x.createLinearGradient(-w*.3,0,w*.3,0);g.addColorStop(0,CR(0));g.addColorStop(.5,CR(.28));g.addColorStop(1,CR(0));x.fillStyle=g;x.fillRect(-w*.3,-h,w*.6,h*3)},
+dust(x,w,h,l){for(let k=0;k<40;k++){x.fillStyle=CR(.1+k%5*.07);x.fillRect((k*53%100)/100*w+Math.sin(l+k)*12,h-((k*37%100)/100*h+l*(20+k%6*15))%h,1+k%3,1+k%3)}},
+end(x,w,h,l){RV.bokeh(x,w,h,l)}};
+function drawReel(c,sp,t){const x=c.getContext("2d"),w=c.width,h=c.height,D=sp.s.reduce((q,z)=>q+z.d,0);let T=0,i=0;while(i<sp.s.length-1&&t>=T+sp.s[i].d){T+=sp.s[i].d;i++}
+const S=sp.s[i],l=t-T,u=l/S.d,e=S.v==="end",ls=v=>{if("letterSpacing"in x)x.letterSpacing=v};
+x.fillStyle="#090909";x.fillRect(0,0,w,h);
+x.save();const z=i%2?1.14-.14*u:1+.14*u;x.translate(w/2+Math.sin(t*9)*1.2,h/2+Math.cos(t*7)*1.2);x.scale(z,z);x.rotate((i%2?-1:1)*.02*u);x.translate(-w/2,-h/2);RV[S.v](x,w,h,l);RV.dust(x,w,h,l);x.restore();
+if(e){const lw=w*.7,lh=lw*LI.height/(LI.width||1);x.globalAlpha=Math.min(1,l/.5);if(LI.width)x.drawImage(LI,(w-lw)/2,h*.44-lh/2,lw,lh);x.textAlign="center";x.font=`500 ${w*.032}px 'Space Grotesk',sans-serif`;ls(w*.008+"px");x.fillStyle=CR(.7);x.fillText((S.t[0]+" · Konsept reels").toUpperCase(),w/2,h*.44+lh*.9);x.globalAlpha=1}
+else{const k=Math.min(1,l/.3),ea=1-Math.pow(1-k,3);x.globalAlpha=Math.min(1,l/.1);x.fillStyle="#f5f3ef";x.textAlign="left";ls("0px");let fs=w*.2;x.font=`800 ${fs}px Manrope,sans-serif`;const mw=Math.max(...S.t.map(q=>x.measureText(q.toUpperCase()).width));if(mw>w*.84){fs*=w*.84/mw;x.font=`800 ${fs}px Manrope,sans-serif`}
+x.save();x.translate(w*.08,h*.72);x.scale(.94+.06*ea,.94+.06*ea);S.t.forEach((q,n)=>x.fillText(q.toUpperCase(),0,(n-(S.t.length-1))*fs*1.05));x.restore();x.globalAlpha=1}
+if(l<.14){x.fillStyle=CR(.5*(1-l/.14));x.fillRect(0,0,w,h)}
+const g=x.createRadialGradient(w/2,h/2,h*.25,w/2,h/2,h*.75);g.addColorStop(0,"rgba(0,0,0,0)");g.addColorStop(1,"rgba(0,0,0,.8)");x.fillStyle=g;x.fillRect(0,0,w,h);
+for(let k=0;k<140;k++){x.fillStyle=CR(Math.random()*.14);x.fillRect(Math.random()*w,Math.random()*h,1.5,1.5)}
+x.fillStyle=CR(.2);x.fillRect(w*.06,h*.035,w*.88,2);x.fillStyle=CR(.9);x.fillRect(w*.06,h*.035,w*.88*Math.min(1,t/D),2);
+x.font=`500 ${w*.026}px 'Space Grotesk',sans-serif`;x.textAlign="left";ls(w*.006+"px");x.fillStyle=CR(.7);x.fillText(String(i+1).padStart(2,"0")+" / "+String(sp.s.length).padStart(2,"0"),w*.06,h*.07);ls("0px")}
+function Player(c,sp){let t=0,run=0,last=0,raf;const D=sp.s.reduce((q,z)=>q+z.d,0);
+const fr=()=>(sp.r?drawReel:draw)(c,sp,Math.min(t,D-.01));
+function tick(n){if(!run)return;t+=(n-last)/1000;last=n;if(t>=D){t=D;run=0;fr();P.ont&&P.ont(t,D);P.onend&&P.onend();return}fr();P.ont&&P.ont(t,D);raf=requestAnimationFrame(tick)}
+const P={D,fr,seek(v){t=v;fr();P.ont&&P.ont(t,D)},play(){cancelAnimationFrame(raf);if(t>=D)t=0;run=1;last=performance.now();raf=requestAnimationFrame(tick)},pause(){run=0;cancelAnimationFrame(raf)},get run(){return run}};
+LIVE.add(P);return P}
+LI.onload=()=>document.querySelectorAll("canvas").forEach(c=>c._p&&c._p.fr());
+document.fonts&&document.fonts.ready.then(()=>document.querySelectorAll("canvas").forEach(c=>c._p&&c._p.fr()));
+function initCards(root){const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+root.querySelectorAll("canvas[data-f]").forEach(c=>{const sp=FILMS[c.dataset.f],P=Player(c,sp),cd=c.closest(".card");c._p=P;P.seek(sp.po);if(rm)return;
+cd.onmouseenter=()=>{P.seek(0);P.play()};cd.onmouseleave=()=>{P.pause();P.seek(sp.po)};P.onend=()=>{P.seek(0);P.play()}})}
+function wireDetail(id){const c=$("#fp");if(!c)return;const sp=FILMS[id],P=Player(c,sp),b=$("#pp"),r=$("#pr"),tm=$("#pt"),fm=q=>Math.floor(q/60)+":"+String(Math.floor(q%60)).padStart(2,"0");
+c._p=P;P.ont=(t,D)=>{r.value=t/D*1000;tm.textContent=fm(t)+" / "+fm(D)};P.onend=()=>{b.textContent="Tekrar izle"};P.seek(sp.po);P.seek(0);P.fr();
+b.onclick=()=>{if(P.run){P.pause();b.textContent="Devam"}else{P.play();b.textContent="Duraklat"}};
+r.oninput=()=>P.seek(r.value/1000*P.D);c.onclick=b.onclick}
+const privacy=()=>`<section class="page wrap pv"><span class="tag">Yasal</span><h1 style="font-size:clamp(36px,7vw,90px);margin:14px 0 40px">Gizlilik politikası</h1><h3>Hangi veriler toplanır?</h3><p>İletişim formunda paylaştığınız ad soyad, şirket/marka, e-posta, proje türü, bütçe ve proje açıklaması yalnızca talebinizi yanıtlamak için kullanılır.</p><h3>Veriler kimlerle paylaşılır?</h3><p>Verileriniz satılmaz. Form, e-posta veya bir form hizmeti üzerinden iletildiği için bu aktarım ilgili hizmet sağlayıcının altyapısından geçebilir.</p><h3>Çerezler ve izleme</h3><p>Bu site çerez, analitik veya reklam izleyicisi kullanmaz. Yazı tipleri Google Fonts üzerinden yüklendiği için sayfa açılırken IP adresiniz Google'a iletilir.</p><h3>Haklarınız</h3><p>KVKK kapsamındaki bilgi, düzeltme ve silme taleplerinizi iletişim formu aracılığıyla bize iletebilirsiniz.</p><p><a class="btn" href="#/iletisim">İletişime geç ↗</a></p></section><div style="height:100px"></div>`;
+function route(){
+LIVE.forEach(p=>p.pause());LIVE.clear();
+const [,r,id]=(location.hash||"#/").split("/");
+let h,sc=null;
+if(!r||["hizmetler","hakkimizda"].includes(r)){h=home();sc=r}
+else if(r==="projeler")h=projects();else if(r==="proje")h=detail(id);else if(r==="iletisim")h=contact();else if(r==="gizlilik")h=privacy();else h=nf();
+app.innerHTML=h;$("#ft").innerHTML=foot();
+document.title=(r==="projeler"?"Projeler":r==="iletisim"?"İletişim":"Missde Yapım")+" — Missde Yapım".replace(/^ — Missde Yapım$/,"");
+if(r===""||!r)document.title="Missde Yapım — Reklam ve Marka Filmleri";
+document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+(r||"")));
+$("#nv").classList.remove("open");$("#bt").setAttribute("aria-expanded","false");
+const target=sc&&document.getElementById(sc==="hizmetler"?"hizmetler":"hakkimizda");
+target?target.scrollIntoView():scrollTo(0,0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+const f=$(".filters");if(f)f.onclick=e=>{const c=e.target.dataset.c;if(!c)return;f.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b===e.target));const fl=PF.filter(p=>c==="Tümü"||p.k===c);$("#rs").hidden=!(c==="Tümü"||c==="Reels");$("#pg").innerHTML=fl.map((p,i)=>cardH(p,i===0).replace("rv","rv in")).join("")||(c==="Reels"?"":'<p style="grid-column:1/-1;color:var(--mut)">Bu kategoride henüz proje yok.</p>');initCards($("#pg"))};
+const cf=$("#cf");if(cf)cf.onsubmit=submit;initCards(app);wireDetail(id)}
+async function submit(e){
+e.preventDefault();const f=e.target,m=$("#msg"),d=Object.fromEntries(new FormData(f));
+if(!d.ad||!d.aciklama||!/^\S+@\S+\.\S+$/.test(d.eposta||"")){m.textContent="Lütfen ad soyad, geçerli bir e-posta ve proje açıklamasını doldurun.";return}
+if(CONFIG.formEndpoint){try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)});if(!r.ok)throw 0;m.textContent="Talebiniz iletildi. En kısa sürede dönüş yapacağız.";f.reset()}catch(_){m.textContent="Gönderilemedi. Lütfen daha sonra tekrar deneyin."}return}
+if(CONFIG.email){const body=`Ad soyad: ${d.ad}\nŞirket/marka: ${d.marka}\nE-posta: ${d.eposta}\nProje türü: ${d.tur}\nBütçe: ${d.butce}\n\n${d.aciklama}`;location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent("Proje talebi — "+d.ad)}&body=${encodeURIComponent(body)}`;m.textContent="E-posta uygulamanız açılıyor. Gönder'e basarak talebi tamamlayın.";return}
+m.textContent="Form henüz bir e-posta veya form hizmetine bağlı değil; talebiniz gönderilmedi. (Yönetici: CONFIG içine email veya formEndpoint girin.)"}
+$("#bt").onclick=()=>{const o=$("#nv").classList.toggle("open");$("#bt").setAttribute("aria-expanded",o)};
+addEventListener("scroll",()=>$("#hd").classList.toggle("solid",scrollY>60),{passive:true});
+addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
